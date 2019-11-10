@@ -85,6 +85,7 @@ background:linear-gradient(176deg, #d6e6ed 70%,#ffffff 0);
 .navbar-nav{
   background-color:#d6e6ed
 }
+.sticky-top{'transition': 'all 300ms ease' !important}
 
 
   </style>
@@ -92,7 +93,7 @@ background:linear-gradient(176deg, #d6e6ed 70%,#ffffff 0);
   <body>
 
 <div class="container-fluid m-0 p-0">
-<nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-light px-sm-5 px-0 m-0" style="z-index:10; background-color:#d6e6ed; font-weight:600; text-transform:uppercase; height:60px">
+<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light px-sm-5 px-0 m-0" style="z-index:10; background-color:#d6e6ed; font-weight:600; text-transform:uppercase; height:60px">
 
 
   <a class="navbar-brand ml-3" href="index.html"><img id="logo" src="https://www.visueldata.dk/wp-content/uploads/2019/10/VD-Logo-2-1.png" style="height:40px"></a>
@@ -102,7 +103,7 @@ background:linear-gradient(176deg, #d6e6ed 70%,#ffffff 0);
 
   <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
     <div id="navbar_1" class="navbar-nav pl-3" >
-      <a class="nav-item nav-link active" href="#">Visuel Data <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="index.html">Visuel Data <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="basis.html">Basis</a>
       <a class="nav-item nav-link" href="premium.html">Premium</a>
             <a class="nav-item nav-link" href="about.html">Hvem er vi</a>
@@ -225,7 +226,7 @@ Du er også altid velkommen til at give os et kald for mere information. </p>
 
      //>=, not <=
     if (scroll >= 50) {
- $(".sticky-top").css({'background-color':'white', 'box-shadow':'0 2px 2px -2px grey','transition': 'all 300ms'});
+ $("#navbar").css({'background-color':'white', 'box-shadow':'0 2px 2px -2px grey','transition': 'all 300ms'});
  $("#navbar").css({'height':'12vh','transition': 'all 300ms'});
  $("#navbar_1").css({'background-color':'white', 'box-shadow':'0 2px 2px -2px grey', 'transition': 'all 300ms'})
   if ($(window).width() > 600) { $("#navbar_1").css({'background-color':'white', 'box-shadow':'', 'transition': 'all 300ms'})
@@ -233,7 +234,7 @@ Du er også altid velkommen til at give os et kald for mere information. </p>
          }
         else{
           {
- $(".sticky-top").css({'background-color':'#d6e6ed','box-shadow':''});
+ $("#navbar").css({'background-color':'#d6e6ed','box-shadow':''});
  $("#navbar").css({'height':'12vh'});
   $("#navbar_1").css({"background-color":"#d6e6ed"})
 
@@ -242,6 +243,19 @@ Du er også altid velkommen til at give os et kald for mere information. </p>
          }
         }
 }); 
+  var lastScrollTop = 100;
+$(window).scroll(function(event){
+  if ($(this).scrollTop() > 200){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+ $("#navbar").css({"transform":"translateY(-80px)"});
+   } else {
+ $("#navbar").css({"transform":"translateY(0px)"});
+   };
+    lastScrollTop = st;
+
+}});
+
 $('.smooth-goto').on('click', function() {  
     $("html, body").animate({scrollTop: $(this.hash).offset().top-100}, 500);
 
