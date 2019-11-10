@@ -86,7 +86,9 @@ background:linear-gradient(176deg, #d6e6ed 70%,#ffffff 0);
   background-color:#d6e6ed
 }
 .fixed-top{'transition': 'all 1000ms' !important}
-
+.navbar-toggler-icon{background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(43,52,57,1)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+.navbar-toggler{border-color: rgba(0,0,0,0) !important;}
 
   </style>
   </head>
@@ -113,10 +115,10 @@ background:linear-gradient(176deg, #d6e6ed 70%,#ffffff 0);
   </div>
 </nav>
 
-<div class="row headerrow blue mx-0 pt-3">
-<div class="col-sm-6  pl-sm-5 pb-1 pt-3">
+<div class="row headerrow blue mx-0 pt-3 mt-sm-5">
+<div class="col-sm-6 pl-sm-5 pb-1 pt-3">
 
-<h1 class="mt-sm-5 header" style="font-weight:600">Få indsigt i din virksomhed</h1>
+<h1 class="mt-5 header" style="font-weight:600">Få indsigt i din virksomhed</h1>
 <p class="subtitle" >Skab overblik, analysere KPI’er og træf beslutninger med visuel datas rapporterings løsning.</p>
 <a class="smooth-goto btn btn-primary my-sm-4 " href="#first" style="font-weight:400;font-size:24px">Læs mere</a>
 </div> 
@@ -227,7 +229,7 @@ Du er også altid velkommen til at give os et kald for mere information. </p>
      //>=, not <=
     if (scroll >= 50) {
  $("#navbar").css({'background-color':'white', 'box-shadow':'0 2px 2px -2px grey','transition': 'all 600ms'});
- $("#navbar").css({'height':'12vh','transition': 'all 1000ms'});
+ $("#navbar").css({'height':'12vh','transition': 'all 600ms'});
  $("#navbar_1").css({'background-color':'white', 'box-shadow':'0 2px 2px -2px grey', 'transition': 'all 600ms'})
   if ($(window).width() > 600) { $("#navbar_1").css({'background-color':'white', 'box-shadow':'', 'transition': 'all 600ms'})
          }
@@ -257,7 +259,7 @@ $(window).scroll(function(event){
 }});
 
 $('.smooth-goto').on('click', function() {  
-    $("html, body").animate({scrollTop: $(this.hash).offset().top-100}, 500);
+    $("html, body").animate({scrollTop: $(this.hash).offset().top}, 500);
 
 });
 
