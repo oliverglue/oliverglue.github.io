@@ -85,7 +85,7 @@ background:linear-gradient(176deg, #d6e6ed 70%,#ffffff 0);
 .navbar-nav{
   background-color:#d6e6ed
 }
-.sticky-top{'transition': 'all 300ms ease' !important}
+.fixed-top{'transition': 'all 1000ms' !important}
 
 
   </style>
@@ -226,10 +226,10 @@ Du er også altid velkommen til at give os et kald for mere information. </p>
 
      //>=, not <=
     if (scroll >= 50) {
- $("#navbar").css({'background-color':'white', 'box-shadow':'0 2px 2px -2px grey','transition': 'all 300ms'});
- $("#navbar").css({'height':'12vh','transition': 'all 300ms'});
- $("#navbar_1").css({'background-color':'white', 'box-shadow':'0 2px 2px -2px grey', 'transition': 'all 300ms'})
-  if ($(window).width() > 600) { $("#navbar_1").css({'background-color':'white', 'box-shadow':'', 'transition': 'all 300ms'})
+ $("#navbar").css({'background-color':'white', 'box-shadow':'0 2px 2px -2px grey','transition': 'all 600ms'});
+ $("#navbar").css({'height':'12vh','transition': 'all 1000ms'});
+ $("#navbar_1").css({'background-color':'white', 'box-shadow':'0 2px 2px -2px grey', 'transition': 'all 600ms'})
+  if ($(window).width() > 600) { $("#navbar_1").css({'background-color':'white', 'box-shadow':'', 'transition': 'all 600ms'})
          }
          }
         else{
@@ -245,10 +245,10 @@ Du er også altid velkommen til at give os et kald for mere information. </p>
 }); 
   var lastScrollTop = 100;
 $(window).scroll(function(event){
-  if ($(this).scrollTop() > 200){
+  if ($(this).scrollTop() > 250){
    var st = $(this).scrollTop();
    if (st > lastScrollTop){
- $("#navbar").css({"transform":"translateY(-80px)"});
+ $("#navbar").css({"transform":"translateY(-100px)"});
    } else {
  $("#navbar").css({"transform":"translateY(0px)"});
    };
